@@ -1,0 +1,269 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page trimDirectiveWhitespaces="true" %>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/main.css">
+</head>
+
+<body>
+
+    <div id="wrap">
+        <header>
+            <div id="logo"></div>
+            <div id="title">CINEMA</div>
+            
+            <c:if test="${dto == null}">
+            <div id="sign">
+                <button onclick="location='login.do'">로그인</button>
+                <button onclick="location='signup.do'">회원가입</button>
+            </div>
+            </c:if>
+            <c:if test="${dto != null}">
+            <div id="sign">
+            	${dto.id}
+            	<button>마이페이지</button>
+            	<button onclick="location='logout.do'">로그아웃</button>
+            </div>
+            </c:if>
+        </header>
+        <nav>
+            <ul id="menu">
+                <li>예매
+                    <div>
+                        <ul class="sub">
+                            <li>예매하기</li>
+                            <li>상영시간표</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>영화
+                    <div>
+                        <ul class="sub">
+                            <li>현재상영작</li>
+                            <li>상영예정작</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>영화관
+                    <div>
+                        <ul class="sub">
+                            <li>영화관찾기</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>이벤트
+                    <div>
+                        <ul class="sub">
+                            <li>진행중인이벤트</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <br><br>
+        <div class="hr-sect">FILM</div> <br>
+        <div id="film">
+            <div id="showbox">
+                <div id="movebox">
+                    <div><img src="resources/image/cat1.jpg"></div>
+                    <div><img src="resources/image/cat2.jpg"></div>
+                    <div><img src="resources/image/cat3.jpg"></div>
+                    <div><img src="resources/image/cat4.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="hr-sect">BOOKING</div>
+        <div id="booking">
+            <button id="left"> ◀ </button>
+            <button id="right"> ▶</button>
+            <div id="bshow">
+                <div id="bmove">
+                    <div>
+                        <img src="resources/image/cat1.jpg" class="bimg">
+                        <div class="detail">
+                            <input type="button" class="bbutton" value="예매하기">
+                        </div>
+                    </div>
+                    <div>
+                        <img src="resources/image/cat2.jpg" class="bimg">
+                        <div class="detail">
+                            <input type="button" class="bbutton" value="예매하기">
+                        </div>
+                    </div>
+                    <div>
+                        <img src="resources/image/cat3.jpg" class="bimg">
+                        <div class="detail">
+                            <input type="button" class="bbutton" value="예매하기">
+                        </div>
+                    </div>
+                    <div>
+                        <img src="resources/image/cat4.jpg" class="bimg">
+                        <div class="detail">
+                            <input type="button" class="bbutton" value="예매하기">
+                        </div>
+                    </div>
+                    <div>
+                        <img src="resources/image/cat5.jpg" class="bimg">
+                        <div class="detail">
+                            <input type="button" class="bbutton" value="예매하기">
+                        </div>
+                    </div>
+                    <div>
+                        <img src="resources/image/cat6.jpg" class="bimg">
+                        <div class="detail">
+                            <input type="button" class="bbutton" value="예매하기">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr-sect">EVENT</div>
+        <div id="event">
+            <div id="ewrap">
+                <div id="event1">
+                    <img src="resources/image/event1.png">
+                    <div>
+                        <p style="color: purple;">SUMMER BARGAIN</p>
+                        <p>영화, 팝콘, 굿즈까지!</p>
+                    </div>
+                </div>
+                <div id="event2">
+                    <img src="resources/image/event2.jpg">
+                    <div>
+                        <p style="color: purple;">최고의 몰입감!</p>
+                        <p>대관해서 게임하자!</p>
+                    </div>
+                </div>
+                <div id="event3">
+                    <img src="resources/image/event3.png">
+                    <div>
+                        <p style="color: purple;">휴가철 피서지</p>
+                        <p>이벤트 참여하고 캠핑용품 받자!</p>
+                    </div>
+                </div>
+                <div id="event4">
+                    <img src="resources/image/event4.jpg">
+                    <div>
+                        <p style="color: purple;">오늘밤 더운데 뭐하지?</p>
+                        <p>밤에도 영화보자!</p>
+                        <p>야간개장 OPEN!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <footer>
+            <p style="font-size: 18px;">CINEMA</p>
+            <p style="text-indent: 5px;">회원약관 |
+                개인정보처리방침 |
+                이메일무단수집거부 |
+                영상정보처리기기 운영 및 관리방침
+            <p style="text-indent: 5px;">땡땡시 땡땡구 땡땡로 | 고객센터 123-4567</p>
+        </footer>
+    </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            for (var i = 0; i < 3; i++) {
+                $("#menu>li").eq(i).css("border-right", "3px solid black");
+            }
+
+            //메뉴 hover
+            $("#menu>li").mouseenter(function () {
+                $(this).css("border-bottom", "5px solid red");
+                $(this).children().css("display", "block");
+            })
+            $("#menu>li").mouseleave(function () {
+                $(this).css("border-bottom", "none");
+                $(this).children().css("display", "none");
+            })
+
+            //세부메뉴 hover
+            $(".sub>li").mouseenter(function () {
+                $(this).css("color", "red");
+            })
+            $(".sub>li").mouseout(function () {
+                $(this).css("color", "white");
+            })
+
+            //예매 hover
+            $("#bmove>div").mouseenter(function () {
+                $(this).children().css("display", "block");
+            })
+            $("#bmove>div").mouseleave(function () {
+                $(this).children().eq(1).css("display", "none");
+            })
+
+
+            $(".bbutton").mouseenter(function () {
+                $(this).css("text-decoration", "underline");
+            })
+            $(".bbutton").mouseout(function () {
+                $(this).css("text-decoration", "none");
+            })
+
+            $("#movebox").children().eq(0).addClass("noaccent");
+            $("#movebox").children().eq(1).addClass("accent");
+            $("#movebox").children().eq(2).addClass("noaccent");
+
+            var filmSize = document.querySelector("#showbox").clientWidth;
+            $("#movebox").children().css("width", filmSize / 3);
+
+            var bookSize = document.querySelector("#bshow").clientWidth;
+            $("#bmove").children().css("width", filmSize / 4);
+
+
+            setInterval(function () {
+                $("#movebox").children().eq(0).removeClass("noaccent");
+                $("#movebox").children().eq(1).removeClass("accent");
+                $("#movebox").children().eq(2).removeClass("noaccent");
+
+                $("#movebox").stop().animate({
+                    left: -filmSize / 3
+                }, 300, function () {
+                    var tmp = $("#movebox").children().eq(0).detach();
+                    $("#movebox").append(tmp);
+                    $("#movebox").css("left", "0");
+                    $("#movebox").children().eq(0).addClass("noaccent");
+                    $("#movebox").children().eq(1).addClass("accent");
+                    $("#movebox").children().eq(2).addClass("noaccent");
+                })
+            }, 3000);
+
+            $("#right").click(function () {
+                $("#bmove").stop().animate({
+                    left: -bookSize / 4
+                }, 300, function () {
+                    var tmp = $("#bmove").children().eq(0).detach();
+                    $("#bmove").append(tmp);
+                    $("#bmove").css("left", "0");
+                })
+            })
+
+            $("#left").click(function () {
+                $("#bmove").stop().animate({
+                    left: bookSize / 4
+                }, 300, function () {
+                    var tmp = $("#bmove").children().eq(5).detach();
+                    $("#bmove").prepend(tmp);
+                    $("#bmove").css("left", "0");
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
