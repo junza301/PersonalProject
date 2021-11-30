@@ -20,8 +20,15 @@ public class CMovieDAO {
 	@Value("select * from cmovie")
 	private String selectAllMovie;
 	
+	@Value("SELECT * FROM cmovie ORDER BY idx asc LIMIT 4")
+	private String selectMainMovie;
+	
 	public List<CMovieDTO> movieGetAll() {
 		return jdbcTmp.query(selectAllMovie, new movieMapper());
+	}
+	
+	public List<CMovieDTO> movieGetMain() {
+		return jdbcTmp.query(selectMainMovie, new movieMapper());
 	}
 	
 	class movieMapper implements RowMapper<CMovieDTO> {
