@@ -148,7 +148,7 @@
         }
 
         #filmlist {
-            width: 70%;
+            width: 60%;
             position: relative;
             left: 20%;
         }
@@ -159,11 +159,11 @@
             position: relative;
             top: 0;
             left: 0;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .filmimage {
-            width: 23%;
+            width: 30%;
             height: 100%;
             position: absolute;
             top: 0;
@@ -171,11 +171,13 @@
         }
 
         .filmex {
-            width: 73%;
+            width: 70%;
             height: 100%;
             position: absolute;
             top: 0;
             right: 0;
+            background-color: white;
+            padding-left: 20px;
         }
         
         .fimg {
@@ -208,11 +210,35 @@
             color: white;
         }
 
+        #page {
+            width: 60%;
+            height: 50px;
+            position: absolute;
+            left: 20%;
+        }
 
+        .paging {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
 
+        .paging>li {
+            width: 30px;
+            height: 100px;
+            display: inline-block;
+        }
 
+        .paging>li>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .paging>li a:hover {
+            text-decoration: underline;
+        }
+        
         footer {
             width: 100%;
             height: 100px;
-
         }

@@ -13,7 +13,7 @@
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-                <link rel="stylesheet" href="resources/css/list.css?moluaaaaaa">
+                <link rel="stylesheet" href="resources/css/list.css?moluaaaaaaaaaaaaaaaaaaaaa">
             </head>
 
             <body>
@@ -44,7 +44,21 @@
                                 </div>
                             </c:forEach>
                         </div>
-						
+                        <div id = "page">
+                            <ul class = "paging">
+                                <c:forEach var="i" begin="${start}" end="${end}">
+                                <c:choose>
+	                                <c:when test="${i eq now }">
+	                                	<li><a href="list.do?now=${i}" style="color: purple">[${i}]</a></li>
+	                                </c:when>
+	                                <c:otherwise>
+	                                	<li><a href="list.do?now=${i}">[${i}]</a></li>
+	                                </c:otherwise>
+                                </c:choose>
+                                </c:forEach>
+                            </ul>
+                        </div>
+				<br><br>
                  <%@include file="footer.jsp" %>
 
 

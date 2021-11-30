@@ -108,8 +108,6 @@
                 </div>
             </div>
         </div>
-        <br>
-        <hr>
         <%@include file="footer.jsp" %>
     
     <script>

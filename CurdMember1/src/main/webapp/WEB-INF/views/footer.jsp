@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page trimDirectiveWhitespaces="true" %>
+	<br><hr><br>
 		<footer>
             <p style="font-size: 18px;">CINEMA</p>
             <p style="text-indent: 5px;">회원약관 |

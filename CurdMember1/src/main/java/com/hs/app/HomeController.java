@@ -73,19 +73,47 @@ public class HomeController {
 	
 	@RequestMapping("/list.do")
 	public String listMember(Model model, HttpServletRequest request) {
-		String page_ = request.getParameter("p");
-		String now_ = request.getParameter("n");
-		
-		String page = "1";
-		if(page_ != null && page_ != "")
-			page = page_;
-		String now = "1";
+		String now_ = request.getParameter("now");
+		int now = 1;
 		if(now_ != null && now_ != "")
-			now = now_;
+			now = Integer.parseInt(now_);
+		
+		int total = CMoviedao.movieGetCount();
+		int totalpage;
+		if(total % 5 == 0)
+			totalpage = total/5;
+		else
+			totalpage = total/5 + 1;
+		
+		int start;
+		int end;
+		
+		if(now == 1 || now == 2 || now == 3) {
+			if(totalpage < 5) {
+				start = 1;
+				end = totalpage;
+			} else {
+				start = 1;
+				end = 5;
+			}
+		} else if(now == totalpage || now == totalpage-1 || now == totalpage-2) {
+			if(totalpage < 5) {
+				start = 1;
+				end = totalpage;
+			} else {
+				start = totalpage-4;
+				end = totalpage;
+			}
+		} else {
+			start = now-2;
+			end = now+2;
+		}
 			
-		model.addAttribute("paging", page);
+		model.addAttribute("now", now);
+		model.addAttribute("start", start);
+		model.addAttribute("end", end);
 		model.addAttribute("main", CMoviedao.movieGetMain());
-		model.addAttribute("list", CMoviedao.movieGetAll());
+		model.addAttribute("list", CMoviedao.movieGetFive(now));
 		return "list";
 	}
 	

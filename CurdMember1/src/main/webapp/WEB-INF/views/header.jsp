@@ -5,7 +5,7 @@
 
 		<header>
             <div id="logo"></div>
-            <div id="title">CINEMA</div>
+            <div id="title"><a href="main.do" style="text-decoration:none; color:black">CINEMA</a></div>
             
             <c:if test="${dto == null}">
             <div id="sign">
@@ -55,3 +55,5 @@
             </ul>
         </nav>
         <br><br>
+        
+        
