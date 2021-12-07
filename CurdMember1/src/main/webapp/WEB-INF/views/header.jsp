@@ -16,7 +16,7 @@
             <c:if test="${dto != null}">
             <div id="sign">
             	${dto.id}
-            	<button>마이페이지</button>
+            	<button onclick="location='mypage.do'">마이페이지</button>
             	<button onclick="location='logout.do'">로그아웃</button>
             </div>
             </c:if>

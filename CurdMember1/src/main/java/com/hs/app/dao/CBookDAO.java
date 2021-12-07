@@ -17,7 +17,7 @@ public class CBookDAO {
 	@Autowired
 	private JdbcTemplate jdbcTmp;
 	
-	@Value("select * from cbook where member = ?")
+	@Value("SELECT * from cbook where member = ?")
 	private String selectMemberBook;
 	
 	@Value("insert into cbook values(null, ?, ?, ?, ?, ?, ?)")

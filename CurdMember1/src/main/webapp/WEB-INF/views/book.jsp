@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="resources/css/book.css?molaaaaa">
+    <link rel="stylesheet" href="resources/css/book.css?molaaaaaaaaaaaa">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
 </head>
 
@@ -62,19 +62,19 @@
             </div>
             <div class="contentdiv" id="div4" style="display: none; height:150px;">
             	성인
-            	<input type="button" value="-" id="adown">
+            	<input type="button" value="-" id="adown" style="width:30px; height:25px">
             	<input type="text" name="adult" value="1" id="adult">
-            	<input type="button" value="+" id="aup"> <br>
+            	<input type="button" value="+" id="aup" style="width:30px; height:25px"> <br>
             	아동
-            	<input type="button" value="-" id="cdown">
+            	<input type="button" value="-" id="cdown" style="width:30px; height:25px">
             	<input type="text" name="children" value="0" id="children">
-            	<input type="button" value="+" id="cup"> <br><br>
+            	<input type="button" value="+" id="cup" style="width:30px; height:25px"> <br><br>
             	총액
-            	<input type="text" value="13000" id="amount">
+            	<input type="text" value="13000" id="amount"> <br><br>
             </div>
             
             <div class="titlediv">
-            	<input type="submit" value="예매하기">
+            	<input type="submit" value="예매하기" style="background-color:white;">
             </div>
             </form>
         </div>

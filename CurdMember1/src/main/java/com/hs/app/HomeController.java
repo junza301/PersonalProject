@@ -1,5 +1,6 @@
 package com.hs.app;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hs.app.bean.CBookDTO;
+import com.hs.app.bean.CBookListDTO;
 import com.hs.app.bean.CCinemaDTO;
 import com.hs.app.bean.CMemberDTO;
 import com.hs.app.bean.CMovieDTO;
@@ -133,7 +136,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/book.do")
-	public String Book(Model model) {
+	public String Book(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		CMemberDTO dto = (CMemberDTO) session.getAttribute("dto");
+		if(dto == null || dto.equals(""))
+			return "redirect:/login.do";
+		
 		model.addAttribute("Clist", CCinemadao.cinemaGetAll());
 		model.addAttribute("Mlist", CMoviedao.movieGetAll());
 		return "book";
@@ -183,4 +191,14 @@ public class HomeController {
 		return "success";
 	}
 	
+	@RequestMapping("/mypage.do")
+	public String mypage(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		CMemberDTO medto = (CMemberDTO) session.getAttribute("dto");	
+		List<CBookDTO> bdto = CBookdao.bookMember(medto.getIdx());	
+	
+		model.addAttribute("mdto", medto);
+		model.addAttribute("bdto", bdto);
+		return "mypage";
+	}
 }
