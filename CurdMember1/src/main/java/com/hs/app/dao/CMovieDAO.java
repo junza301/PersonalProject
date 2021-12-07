@@ -23,6 +23,9 @@ public class CMovieDAO {
 	@Value("SELECT * FROM cmovie ORDER BY idx asc LIMIT 4")
 	private String selectMainMovie;
 	
+	@Value("select * from cmovie where name = ?")
+	private String selectOneMovie;
+	
 	@Value("SELECT * FROM cmovie where idx between ? and ?")
 	private String selectFiveMovie;
 	
@@ -35,6 +38,11 @@ public class CMovieDAO {
 	
 	public List<CMovieDTO> movieGetMain() {
 		return jdbcTmp.query(selectMainMovie, new movieMapper());
+	}
+	
+	public CMovieDTO movieGetIdx(String movie) {
+		CMovieDTO dto = jdbcTmp.queryForObject(selectOneMovie, new movieMapper(), movie);
+		return dto;
 	}
 	
 	public List<CMovieDTO> movieGetFive(int nowPage) {

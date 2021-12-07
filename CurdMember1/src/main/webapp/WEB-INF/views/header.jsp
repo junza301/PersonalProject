@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 
@@ -9,46 +9,46 @@
             
             <c:if test="${dto == null}">
             <div id="sign">
-                <button onclick="location='login.do'">·Î±×ÀÎ</button>
-                <button onclick="location='signup.do'">È¸¿ø°¡ÀÔ</button>
+                <button onclick="location='login.do'">ë¡œê·¸ì¸</button>
+                <button onclick="location='signup.do'">íšŒì›ê°€ìž…</button>
             </div>
             </c:if>
             <c:if test="${dto != null}">
             <div id="sign">
             	${dto.id}
-            	<button>¸¶ÀÌÆäÀÌÁö</button>
-            	<button onclick="location='logout.do'">·Î±×¾Æ¿ô</button>
+            	<button>ë§ˆì´íŽ˜ì´ì§€</button>
+            	<button onclick="location='logout.do'">ë¡œê·¸ì•„ì›ƒ</button>
             </div>
             </c:if>
         </header>
         
         <nav>
             <ul id="menu">
-                <li>¿¹¸Å
+                <li>ì˜ˆë§¤
                     <div>
                         <ul class="sub">
-                            <li>¿¹¸ÅÇÏ±â</li>
+                            <li><a href="book.do">ì˜ˆë§¤í•˜ê¸°</a></li>
                         </ul>
                     </div>
                 </li>
-                <li>¿µÈ­
+                <li>ì˜í™”
                     <div>
                         <ul class="sub">
-                            <li><a href="list.do">ÇöÀç»ó¿µÀÛ</a></li>
+                            <li><a href="list.do">í˜„ìž¬ìƒì˜ìž‘</a></li>
                         </ul>
                     </div>
                 </li>
-                <li>¿µÈ­°ü
+                <li>ì˜í™”ê´€
                     <div>
                         <ul class="sub">
-                            <li>¿µÈ­°üÃ£±â</li>
+                            <li>ì˜í™”ê´€ì°¾ê¸°</li>
                         </ul>
                     </div>
                 </li>
-                <li>ÀÌº¥Æ®
+                <li>ì´ë²¤íŠ¸
                     <div>
                         <ul class="sub">
-                            <li>ÁøÇàÁßÀÎÀÌº¥Æ®</li>
+                            <li>ì§„í–‰ì¤‘ì¸ì´ë²¤íŠ¸</li>
                         </ul>
                     </div>
                 </li>

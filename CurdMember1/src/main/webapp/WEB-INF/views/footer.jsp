@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 	<br><hr><br>
 		<footer>
             <p style="font-size: 18px;">CINEMA</p>
-            <p style="text-indent: 5px;">È¸¿ø¾à°ü |
-                °³ÀÎÁ¤º¸Ã³¸®¹æÄ§ |
-                ÀÌ¸ÞÀÏ¹«´Ü¼öÁý°ÅºÎ |
-                ¿µ»óÁ¤º¸Ã³¸®±â±â ¿î¿µ ¹× °ü¸®¹æÄ§
-            <p style="text-indent: 5px;">¶¯¶¯½Ã ¶¯¶¯±¸ ¶¯¶¯·Î | °í°´¼¾ÅÍ 123-4567</p>
+            <p style="text-indent: 5px;">íšŒì›ì•½ê´€ |
+                ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨ |
+                ì´ë©”ì¼ë¬´ë‹¨ìˆ˜ì§‘ê±°ë¶€ |
+                ì˜ìƒì •ë³´ì²˜ë¦¬ê¸°ê¸° ìš´ì˜ ë° ê´€ë¦¬ë°©ì¹¨
+            <p style="text-indent: 5px;">ë•¡ë•¡ì‹œ ë•¡ë•¡êµ¬ ë•¡ë•¡ë¡œ | ê³ ê°ì„¼í„° 123-4567</p>
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,7 +19,7 @@
                 $("#menu>li").eq(i).css("border-right", "3px solid black");
             }
 
-            //¸Þ´º hover
+            //ë©”ë‰´ hover
             $("#menu>li").mouseenter(function () {
                 $(this).css("border-bottom", "5px solid red");
                 $(this).children().css("display", "block");
@@ -29,7 +29,7 @@
                 $(this).children().css("display", "none");
             })
 
-            //¼¼ºÎ¸Þ´º hover
+            //ì„¸ë¶€ë©”ë‰´ hover
             $(".sub>li>a").mouseenter(function () {
                 $(this).css("color", "red");
             })

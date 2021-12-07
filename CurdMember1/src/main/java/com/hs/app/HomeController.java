@@ -11,9 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hs.app.bean.CCinemaDTO;
 import com.hs.app.bean.CMemberDTO;
+import com.hs.app.bean.CMovieDTO;
+import com.hs.app.bean.CScreenDTO;
+import com.hs.app.dao.CBookDAO;
+import com.hs.app.dao.CCinemaDAO;
 import com.hs.app.dao.CMemberDAO;
 import com.hs.app.dao.CMovieDAO;
+import com.hs.app.dao.CScreenDAO;
 
 /**
  * Handles requests for the application home page.
@@ -26,6 +32,15 @@ public class HomeController {
 	
 	@Autowired
 	CMovieDAO CMoviedao;
+	
+	@Autowired
+	CCinemaDAO CCinemadao;
+	
+	@Autowired
+	CScreenDAO CScreendao;
+	
+	@Autowired
+	CBookDAO CBookdao;
 	
 	@RequestMapping(value = "/main.do")
 	public String home(Model model) {	
@@ -117,5 +132,55 @@ public class HomeController {
 		return "list";
 	}
 	
+	@RequestMapping("/book.do")
+	public String Book(Model model) {
+		model.addAttribute("Clist", CCinemadao.cinemaGetAll());
+		model.addAttribute("Mlist", CMoviedao.movieGetAll());
+		return "book";
+	}
+	
+	@RequestMapping("/bookproc.do")
+	public String Bookproc(HttpServletRequest request) {
+		String cinema = request.getParameter("cinema");
+		String movie = request.getParameter("movie");
+		String time = request.getParameter("time");
+		String date = request.getParameter("date");
+		int adult = Integer.parseInt(request.getParameter("adult"));
+		int children = Integer.parseInt(request.getParameter("children"));
+		
+		HttpSession session = request.getSession();
+		CMemberDTO dto = (CMemberDTO) session.getAttribute("dto");
+		int member_idx = dto.getIdx();
+		
+		
+		//영화관,영화 DTO 받아오기	
+		CCinemaDTO cinema_dto = CCinemadao.cinemaGetIdx(cinema);
+		CMovieDTO movie_dto = CMoviedao.movieGetIdx(movie);
+		int cinema_idx = cinema_dto.getIdx();
+		int movie_idx = movie_dto.getIdx();
+
+		//상영정보 DTO 받아오기
+		CScreenDTO screen_dto = CScreendao.screenGetOne(cinema_idx, movie_idx, time);
+		int remain_seat = screen_dto.getRemain_seat();
+		
+		//남은좌석이 없다면 오류페이지
+		if(remain_seat < adult + children) {
+			return "redirect:/error.do";
+		}
+		
+		CBookdao.bookInsert(member_idx, cinema_idx, movie_idx, date, time, adult+children);
+		CScreendao.screenUpdate(remain_seat-(adult+children), cinema_idx, movie_idx, date, time);
+		return "redirect:/success.do";
+	}
+	
+	@RequestMapping("/error.do")
+	public String Errorpage() {
+		return "error";
+	}
+	
+	@RequestMapping("/success.do")
+	public String successpage() {
+		return "success";
+	}
 	
 }

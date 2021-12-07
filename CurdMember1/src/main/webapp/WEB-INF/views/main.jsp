@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
@@ -31,44 +31,44 @@
         <br><br>
         <div class="hr-sect">BOOKING</div>
         <div id="booking">
-            <button id="left"> ╒╦ </button>
-            <button id="right"> ╒╨</button>
+            <button id="left"> Б≈─ </button>
+            <button id="right"> Б√╤</button>
             <div id="bshow">
                 <div id="bmove">
                     <div>
                         <img src="resources/image/cat1.jpg" class="bimg">
                         <div class="detail">
-                            <input type="button" class="bbutton" value="©╧╦его╠Б">
+                            <input type="button" class="bbutton" value="Л≤┬К╖╓М∙≤Й╦╟">
                         </div>
                     </div>
                     <div>
                         <img src="resources/image/cat2.jpg" class="bimg">
                         <div class="detail">
-                            <input type="button" class="bbutton" value="©╧╦его╠Б">
+                            <input type="button" class="bbutton" value="Л≤┬К╖╓М∙≤Й╦╟">
                         </div>
                     </div>
                     <div>
                         <img src="resources/image/cat3.jpg" class="bimg">
                         <div class="detail">
-                            <input type="button" class="bbutton" value="©╧╦его╠Б">
+                            <input type="button" class="bbutton" value="Л≤┬К╖╓М∙≤Й╦╟">
                         </div>
                     </div>
                     <div>
                         <img src="resources/image/cat4.jpg" class="bimg">
                         <div class="detail">
-                            <input type="button" class="bbutton" value="©╧╦его╠Б">
+                            <input type="button" class="bbutton" value="Л≤┬К╖╓М∙≤Й╦╟">
                         </div>
                     </div>
                     <div>
                         <img src="resources/image/cat5.jpg" class="bimg">
                         <div class="detail">
-                            <input type="button" class="bbutton" value="©╧╦его╠Б">
+                            <input type="button" class="bbutton" value="Л≤┬К╖╓М∙≤Й╦╟">
                         </div>
                     </div>
                     <div>
                         <img src="resources/image/cat6.jpg" class="bimg">
                         <div class="detail">
-                            <input type="button" class="bbutton" value="©╧╦его╠Б">
+                            <input type="button" class="bbutton" value="Л≤┬К╖╓М∙≤Й╦╟">
                         </div>
                     </div>
                 </div>
@@ -81,29 +81,29 @@
                     <img src="resources/image/event1.png">
                     <div>
                         <p style="color: purple;">SUMMER BARGAIN</p>
-                        <p>©╣х╜, фкдэ, ╠баН╠НаЖ!</p>
+                        <p>Л≤│М≥■, М▄²Л╫≤, Й╣©Л╕┬Й╧▄Л╖─!</p>
                     </div>
                 </div>
                 <div id="event2">
                     <img src="resources/image/event2.jpg">
                     <div>
-                        <p style="color: purple;">цж╟Мюг ╦Тют╟╗!</p>
-                        <p>╢К╟Эгь╪╜ ╟тюсгоюз!</p>
+                        <p style="color: purple;">Л╣°ЙЁ═Л²≤ К╙╟Л·┘Й╟░!</p>
+                        <p>К▄─Й╢─М∙╢Л└° Й╡▄Л·└М∙≤Л·░!</p>
                     </div>
                 </div>
                 <div id="event3">
                     <img src="resources/image/event3.png">
                     <div>
-                        <p style="color: purple;">хч╟║ц╤ гг╪╜аЖ</p>
-                        <p>юл╨╔ф╝ бЭ©╘го╟М д╥гн©Кг╟ ╧чюз!</p>
+                        <p style="color: purple;">М°╢Й╟─Л╡═ М■╪Л└°Л╖─</p>
+                        <p>Л²╢К╡╓М┼╦ Л╟╦Л≈╛М∙≤ЙЁ═ Л╨═М∙▒Л ╘М▓┬ К╟⌡Л·░!</p>
                     </div>
                 </div>
                 <div id="event4">
                     <img src="resources/image/event4.jpg">
                     <div>
-                        <p style="color: purple;">©ю╢ц╧Ц ╢У©Н╣╔ ╧╧гоаЖ?</p>
-                        <p>╧Ц©║╣╣ ©╣х╜╨╦юз!</p>
-                        <p>╬ъ╟ё╟ЁюЕ OPEN!</p>
+                        <p style="color: purple;">Л≤╓К┼≤К╟╓ К█■Л ╢К█╟ К╜░М∙≤Л╖─?</p>
+                        <p>К╟╓Л≈░К▐└ Л≤│М≥■КЁ╢Л·░!</p>
+                        <p>Л∙╪Й╟└Й╟°Л·╔ OPEN!</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
     <script>
         $(function () {
 
-            //©╧╦е hover
+            //Л≤┬К╖╓ hover
             $("#bmove>div").mouseenter(function () {
                 $(this).children().css("display", "block");
             })
